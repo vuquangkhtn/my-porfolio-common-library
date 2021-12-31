@@ -1,18 +1,84 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import './button.css';
+import styled, { css } from 'styled-components';
 
-export const Button = ({ mode, backgroundColor, size, children, ...props }) => {
-  const modeClass = `btn--${mode}`;
+const primaryMixin = css`
+  background: #eee;
+  color: #5b5b5b;
+  &:hover {
+    color: #ffc200;
+  }
+`;
+
+const secondaryMixin = css`
+  background: #474559;
+  color: #ffffff;
+  &:hover {
+    background: #ffc200;
+    color: #ffffff;
+  }
+`;
+
+const submitMixin = css`
+  background: #ffc200;
+  color: #ffffff;
+  &:hover {
+    background: #474559;
+    color: #ffffff;
+  }
+`;
+
+const StyledButton = styled.button`
+  display: inline-block;
+  font-weight: 400;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  border: 1px solid transparent;
+  padding: 0.375rem 0.75rem;
+  font-weight: bold;
+  border-radius: 50px;
+  padding: 13px 29px;
+  font-size: 14px;
+  line-height: normal;
+  overflow: hidden;
+  transition: all 0.4s ease;
+
+  &:hover, &:focus {
+    text-decoration: none;
+  }
+
+  &.disabled, &:disabled {
+    opacity: 0.65;
+  }
+
+  &:not(:disabled):not(.disabled) {
+    cursor: pointer;
+  }
+
+  &:not(:disabled):not(.disabled):active, &:not(:disabled):not(.disabled).active {
+    background-image: none;
+  }
+
+  ${props => props.mode === 'primary' && primaryMixin};
+  ${props => props.mode === 'secondary' && secondaryMixin};
+  ${props => props.mode === 'submit' && submitMixin};
+`;
+
+
+export const Button = ({ mode, backgroundColor, children, ...props }) => {
   return (
-    <button
-      type="button"
-      className={['btn', modeClass, props.className].join(' ')}
+    <StyledButton
+      mode={mode}
       style={backgroundColor && { backgroundColor }}
       {...props}
     >
       {children}
-    </button>
+    </StyledButton>
   );
 };
 
