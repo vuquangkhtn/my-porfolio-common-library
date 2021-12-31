@@ -70,7 +70,7 @@ const StyledButton = styled.button`
 `;
 
 
-export const Button = ({ mode, backgroundColor, children, ...props }) => {
+const Button = ({ mode, backgroundColor, children, ...props }) => {
   return (
     <StyledButton
       mode={mode}
@@ -83,7 +83,7 @@ export const Button = ({ mode, backgroundColor, children, ...props }) => {
 };
 
 Button.propTypes = {
-  mode: PropTypes.oneOf('primary', 'secondary', 'submit'),
+  mode: PropTypes.oneOf(['primary', 'secondary', 'submit']),
   backgroundColor: PropTypes.string,
   children: PropTypes.object.isRequired,
   onClick: PropTypes.func,

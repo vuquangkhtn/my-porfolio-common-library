@@ -9,26 +9,26 @@ export default {
     backgroundColor: { control: 'color' },
     mode: {
       options: ['primary', 'secondary', 'submit'],
-      control: { type: 'select' },
+      control: { type: 'select' }
     }
-  },
+  }
 };
 
 const Template = (args) => <Button {...args} />;
 
 export const Primary = Template.bind({});
 Primary.args = {
-  children: 'Button',
+  children: 'Button'
 };
 
 export const Secondary = Template.bind({});
 Secondary.args = {
   mode: 'secondary',
-  children: 'Button',
+  children: 'Button'
 };
 
 export const Submit = Template.bind({});
 Submit.args = {
   mode: 'submit',
-  children: 'Button',
+  children: 'Button'
 };
