@@ -5,7 +5,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" =
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.default = exports.Button = void 0;
+exports.default = void 0;
 
 var _react = _interopRequireDefault(require("react"));
 
@@ -57,9 +57,8 @@ var Button = function Button(_ref) {
   }, props), children);
 };
 
-exports.Button = Button;
 Button.propTypes = {
-  mode: _propTypes.default.oneOf('primary', 'secondary', 'submit'),
+  mode: _propTypes.default.oneOf(['primary', 'secondary', 'submit']),
   backgroundColor: _propTypes.default.string,
   children: _propTypes.default.object.isRequired,
   onClick: _propTypes.default.func
