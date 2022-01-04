@@ -1,6 +1,6 @@
 {
   "name": "my-porfolio-common-library",
-  "version": "0.1.7",
+  "version": "1.0.2",
   "main": "dist/index.js",
   "private": false,
   "files": [

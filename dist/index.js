@@ -33,6 +33,7 @@ Object.defineProperty(exports, "NavBarToggler", {
     return _NavBarToggler.default;
   }
 });
+exports.StaticPages = void 0;
 Object.defineProperty(exports, "TextArea", {
   enumerable: true,
   get: function get() {
@@ -53,6 +54,12 @@ var _Link = _interopRequireDefault(require("./Link/Link"));
 
 var _NavBarToggler = _interopRequireDefault(require("./Animated/NavBarToggler"));
 
+var _Maintenance = _interopRequireDefault(require("./Page/Maintenance"));
+
+var _Page = _interopRequireDefault(require("./Page/Page404"));
+
+var _Page2 = _interopRequireDefault(require("./Page/Page500"));
+
 var _confirmPopup = _interopRequireDefault(require("./Confirm/confirmPopup"));
 
 var _confirmable = _interopRequireDefault(require("./Confirm/confirmable"));
@@ -67,3 +74,9 @@ var confirmKit = {
   createConfirmation: _createConfirmation.default
 };
 exports.confirmKit = confirmKit;
+var StaticPages = {
+  Maintenance: _Maintenance.default,
+  Page404: _Page.default,
+  Page500: _Page2.default
+};
+exports.StaticPages = StaticPages;
