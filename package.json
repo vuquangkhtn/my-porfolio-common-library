@@ -13,7 +13,7 @@
   },
   "author": "Quang Nguyen",
   "license": "MIT",
-  "source": "src/index.js",
+  "source": "src/index.jsx",
   "bugs": {
     "url": "https://github.com/vuquangkhtn/tfs-common-library/issues"
   },
@@ -90,6 +90,7 @@
     "eslint": "^8.5.0",
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-prettier": "^4.0.0",
+    "eslint-plugin-react": "^7.28.0",
     "eslint-plugin-storybook": "^0.5.5",
     "prettier": "^2.5.1",
     "webpack": "^5.65.0"

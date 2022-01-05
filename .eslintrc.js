@@ -21,6 +21,7 @@ module.exports = {
   plugins: ['react'],
   rules: {
     semi: ["error"],
-    indent: ["error", 2]
+    indent: ["error", 2],
+    quotes: ["error", "single"]
   }
 };
