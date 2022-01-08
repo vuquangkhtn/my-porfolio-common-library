@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import Button from '../Button/Button';
 
 const StyledPopup = styled.div`
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   bottom: 0;
@@ -25,26 +25,26 @@ const Container = styled.div`
   box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.25);
 `;
 
-const Header = styled.h1`
+const Header = styled.h2`
   display: flex;
   justify-content: space-between;
   padding: 5px 10px 5px 10px;
   font-weight: bold;
-  font-size: 20px;
 `;
 
 const Content = styled.span`
   flex: 1;
   padding: 5px 10px;
-  font-size: 16px;
+  font-size: 20px;
   font-weight: 300;
+  min-height: 120px;
 `;
 
 const Actions = styled.div`
   display: flex;
   justify-content: flex-end;
-  column-gap: 5px;
-  padding: 10px 5px;
+  column-gap: 8px;
+  padding: 12px 8px;
   background-color: #f5f5f5;
   border-bottom-left-radius: 8px;
   border-bottom-right-radius: 8px;
@@ -58,12 +58,15 @@ const Popup = ({ show, proceed, dismiss, header, confirmation, isMessage = false
 
   return (
     <StyledPopup onClick={() => dismiss()}>
-      <Container>
+      <Container
+        onClick={(e) => {
+          e.stopPropagation();
+        }}>
         <Header>{header}</Header>
         <Content>{confirmation}</Content>
         <Actions>
           <Button mode="submit" onClick={() => proceed(true)}>
-            OK
+            Yes
           </Button>
           {!isMessage && (
             <Button mode="primary" onClick={handleCancel}>

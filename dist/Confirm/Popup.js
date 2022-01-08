@@ -19,15 +19,15 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
 
-var StyledPopup = _styledComponents.default.div(_templateObject || (_templateObject = _taggedTemplateLiteral(["\n  position: absolute;\n  top: 0;\n  left: 0;\n  bottom: 0;\n  right: 0;\n  display: flex;\n  align-items: center;\n  color: #5b5b5b;\n  justify-content: center;\n"])));
+var StyledPopup = _styledComponents.default.div(_templateObject || (_templateObject = _taggedTemplateLiteral(["\n  position: fixed;\n  top: 0;\n  left: 0;\n  bottom: 0;\n  right: 0;\n  display: flex;\n  align-items: center;\n  color: #5b5b5b;\n  justify-content: center;\n"])));
 
 var Container = _styledComponents.default.div(_templateObject2 || (_templateObject2 = _taggedTemplateLiteral(["\n  min-width: 400px;\n  min-height: 200px;\n  background: white;\n  border-radius: 8px;\n  display: flex;\n  flex-direction: column;\n  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.25);\n"])));
 
-var Header = _styledComponents.default.h1(_templateObject3 || (_templateObject3 = _taggedTemplateLiteral(["\n  display: flex;\n  justify-content: space-between;\n  padding: 5px 10px 5px 10px;\n  font-weight: bold;\n  font-size: 20px;\n"])));
+var Header = _styledComponents.default.h2(_templateObject3 || (_templateObject3 = _taggedTemplateLiteral(["\n  display: flex;\n  justify-content: space-between;\n  padding: 5px 10px 5px 10px;\n  font-weight: bold;\n"])));
 
-var Content = _styledComponents.default.span(_templateObject4 || (_templateObject4 = _taggedTemplateLiteral(["\n  flex: 1;\n  padding: 5px 10px;\n  font-size: 16px;\n  font-weight: 300;\n"])));
+var Content = _styledComponents.default.span(_templateObject4 || (_templateObject4 = _taggedTemplateLiteral(["\n  flex: 1;\n  padding: 5px 10px;\n  font-size: 20px;\n  font-weight: 300;\n  min-height: 120px;\n"])));
 
-var Actions = _styledComponents.default.div(_templateObject5 || (_templateObject5 = _taggedTemplateLiteral(["\n  display: flex;\n  justify-content: flex-end;\n  column-gap: 5px;\n  padding: 10px 5px;\n  background-color: #f5f5f5;\n  border-bottom-left-radius: 8px;\n  border-bottom-right-radius: 8px;\n"])));
+var Actions = _styledComponents.default.div(_templateObject5 || (_templateObject5 = _taggedTemplateLiteral(["\n  display: flex;\n  justify-content: flex-end;\n  column-gap: 8px;\n  padding: 12px 8px;\n  background-color: #f5f5f5;\n  border-bottom-left-radius: 8px;\n  border-bottom-right-radius: 8px;\n"])));
 
 var Popup = function Popup(_ref) {
   var show = _ref.show,
@@ -47,12 +47,16 @@ var Popup = function Popup(_ref) {
     onClick: function onClick() {
       return dismiss();
     }
-  }, /*#__PURE__*/_react.default.createElement(Container, null, /*#__PURE__*/_react.default.createElement(Header, null, header), /*#__PURE__*/_react.default.createElement(Content, null, confirmation), /*#__PURE__*/_react.default.createElement(Actions, null, /*#__PURE__*/_react.default.createElement(_Button.default, {
+  }, /*#__PURE__*/_react.default.createElement(Container, {
+    onClick: function onClick(e) {
+      e.stopPropagation();
+    }
+  }, /*#__PURE__*/_react.default.createElement(Header, null, header), /*#__PURE__*/_react.default.createElement(Content, null, confirmation), /*#__PURE__*/_react.default.createElement(Actions, null, /*#__PURE__*/_react.default.createElement(_Button.default, {
     mode: "submit",
     onClick: function onClick() {
       return proceed(true);
     }
-  }, "OK"), !isMessage && /*#__PURE__*/_react.default.createElement(_Button.default, {
+  }, "Yes"), !isMessage && /*#__PURE__*/_react.default.createElement(_Button.default, {
     mode: "primary",
     onClick: handleCancel
   }, "Cancel"))));

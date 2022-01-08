@@ -24,6 +24,7 @@ var createConfirmation = function createConfirmation(Component) {
         setTimeout(function () {
           if (document.body.contains(wrapper)) {
             document.body.removeChild(wrapper);
+            document.body.style.overflow = 'unset';
           }
         });
       });
@@ -35,6 +36,8 @@ var createConfirmation = function createConfirmation(Component) {
         reject: reject,
         dispose: dispose
       }, props)), wrapper);
+
+      document.body.style.overflow = 'hidden';
     });
     return promise.then(function (result) {
       dispose();

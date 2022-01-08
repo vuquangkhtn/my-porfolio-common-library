@@ -80,11 +80,12 @@ var Template = function Template(args) {
 
   return /*#__PURE__*/_react.default.createElement("div", {
     style: {
-      display: 'flex'
+      display: 'flex',
+      height: '200vh'
     }
-  }, /*#__PURE__*/_react.default.createElement(_Button.default, {
+  }, /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement(_Button.default, {
     onClick: handleConfirm
-  }, "Show confirm"));
+  }, "Show confirm")));
 };
 
 var Default = Template.bind({});

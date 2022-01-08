@@ -10,6 +10,7 @@ const createConfirmation = (Component) => (props) => {
       setTimeout(() => {
         if (document.body.contains(wrapper)) {
           document.body.removeChild(wrapper);
+          document.body.style.overflow = 'unset';
         }
       });
     });
@@ -20,6 +21,7 @@ const createConfirmation = (Component) => (props) => {
       <Component resolve={resolve} reject={reject} dispose={dispose} {...props} />,
       wrapper
     );
+    document.body.style.overflow = 'hidden';
   });
 
   return promise.then(

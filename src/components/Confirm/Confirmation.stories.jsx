@@ -29,8 +29,10 @@ const Template = (args) => {
     }
   };
   return (
-    <div style={{ display: 'flex' }}>
-      <Button onClick={handleConfirm}>Show confirm</Button>
+    <div style={{ display: 'flex', height: '200vh' }}>
+      <div>
+        <Button onClick={handleConfirm}>Show confirm</Button>
+      </div>
     </div>
   );
 };
