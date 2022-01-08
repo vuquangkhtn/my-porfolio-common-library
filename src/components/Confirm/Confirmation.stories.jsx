@@ -1,12 +1,18 @@
 import React from 'react';
 import Button from '../Button/Button';
-import confirmPopup from './confirmPopup';
+import createConfirmation from './createConfirmation';
+import confirmable from './confirmable';
+import Popup from './Popup';
 
 export default {
   title: 'Common/Confirmation',
-  component: confirmPopup,
+  component: Popup,
   argTypes: {}
 };
+
+const ConfirmPopup = confirmable(Popup);
+
+const confirmPopup = createConfirmation(ConfirmPopup);
 
 const Template = (args) => {
   const handleConfirm = async () => {
@@ -29,8 +35,14 @@ const Template = (args) => {
   );
 };
 
-export const Text = Template.bind({});
-Text.args = {
+export const Default = Template.bind({});
+Default.args = {
   header: 'Custom Confirm Popup',
   confirmation: 'Do you want to confirm?'
+};
+
+export const Message = Template.bind({});
+Message.args = {
+  ...Default.args,
+  isMessage: true
 };

@@ -7,12 +7,12 @@ import NavBarToggler from './Animated/NavBarToggler';
 import Maintenance from './Page/Maintenance';
 import Page404 from './Page/Page404';
 import Page500 from './Page/Page500';
-import confirmPopup from './Confirm/confirmPopup';
+import Popup from './Confirm/Popup';
 import confirmable from './Confirm/confirmable';
 import createConfirmation from './Confirm/createConfirmation';
 
 const confirmKit = {
-  confirmPopup,
+  Popup,
   confirmable,
   createConfirmation
 };

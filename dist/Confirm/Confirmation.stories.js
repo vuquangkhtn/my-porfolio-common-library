@@ -3,15 +3,25 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.default = exports.Text = void 0;
+exports.default = exports.Message = exports.Default = void 0;
 
 var _react = _interopRequireDefault(require("react"));
 
 var _Button = _interopRequireDefault(require("../Button/Button"));
 
-var _confirmPopup = _interopRequireDefault(require("./confirmPopup"));
+var _createConfirmation = _interopRequireDefault(require("./createConfirmation"));
+
+var _confirmable = _interopRequireDefault(require("./confirmable"));
+
+var _Popup = _interopRequireDefault(require("./Popup"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); enumerableOnly && (symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; })), keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = null != arguments[i] ? arguments[i] : {}; i % 2 ? ownKeys(Object(source), !0).forEach(function (key) { _defineProperty(target, key, source[key]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)) : ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
 function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
 
@@ -19,10 +29,12 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 
 var _default = {
   title: 'Common/Confirmation',
-  component: _confirmPopup.default,
+  component: _Popup.default,
   argTypes: {}
 };
 exports.default = _default;
+var ConfirmPopup = (0, _confirmable.default)(_Popup.default);
+var confirmPopup = (0, _createConfirmation.default)(ConfirmPopup);
 
 var Template = function Template(args) {
   var handleConfirm = /*#__PURE__*/function () {
@@ -34,7 +46,7 @@ var Template = function Template(args) {
             case 0:
               _context.prev = 0;
               _context.next = 3;
-              return (0, _confirmPopup.default)(args);
+              return confirmPopup(args);
 
             case 3:
               confirm = _context.sent;
@@ -75,9 +87,14 @@ var Template = function Template(args) {
   }, "Show confirm"));
 };
 
-var Text = Template.bind({});
-exports.Text = Text;
-Text.args = {
+var Default = Template.bind({});
+exports.Default = Default;
+Default.args = {
   header: 'Custom Confirm Popup',
   confirmation: 'Do you want to confirm?'
 };
+var Message = Template.bind({});
+exports.Message = Message;
+Message.args = _objectSpread(_objectSpread({}, Default.args), {}, {
+  isMessage: true
+});

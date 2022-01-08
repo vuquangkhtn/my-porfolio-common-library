@@ -50,7 +50,7 @@ const Error = () => {
       <div className="message">
         <h1>500</h1>
         <h3>Server Error</h3>
-        <h2>{"It's not you, it's me."}</h2>
+        <h2>It&apos;s not you, it&apos;s me.</h2>
         <Button mode="secondary" onClick={() => window?.history.back()}>
           Go Back
         </Button>

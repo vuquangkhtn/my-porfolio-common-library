@@ -60,7 +60,7 @@ var _Page = _interopRequireDefault(require("./Page/Page404"));
 
 var _Page2 = _interopRequireDefault(require("./Page/Page500"));
 
-var _confirmPopup = _interopRequireDefault(require("./Confirm/confirmPopup"));
+var _Popup = _interopRequireDefault(require("./Confirm/Popup"));
 
 var _confirmable = _interopRequireDefault(require("./Confirm/confirmable"));
 
@@ -69,7 +69,7 @@ var _createConfirmation = _interopRequireDefault(require("./Confirm/createConfir
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var confirmKit = {
-  confirmPopup: _confirmPopup.default,
+  Popup: _Popup.default,
   confirmable: _confirmable.default,
   createConfirmation: _createConfirmation.default
 };
