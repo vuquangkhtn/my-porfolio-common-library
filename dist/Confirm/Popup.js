@@ -23,7 +23,7 @@ var StyledPopup = _styledComponents.default.div(_templateObject || (_templateObj
 
 var Container = _styledComponents.default.div(_templateObject2 || (_templateObject2 = _taggedTemplateLiteral(["\n  min-width: 400px;\n  min-height: 200px;\n  background: white;\n  border-radius: 8px;\n  display: flex;\n  flex-direction: column;\n  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.25);\n"])));
 
-var Header = _styledComponents.default.h2(_templateObject3 || (_templateObject3 = _taggedTemplateLiteral(["\n  display: flex;\n  justify-content: space-between;\n  padding: 5px 10px 5px 10px;\n  font-weight: bold;\n"])));
+var Header = _styledComponents.default.h3(_templateObject3 || (_templateObject3 = _taggedTemplateLiteral(["\n  display: flex;\n  justify-content: space-between;\n  padding: 12px 10px 5px 10px;\n  font-weight: bold;\n"])));
 
 var Content = _styledComponents.default.span(_templateObject4 || (_templateObject4 = _taggedTemplateLiteral(["\n  flex: 1;\n  padding: 5px 10px;\n  font-size: 20px;\n  font-weight: 300;\n  min-height: 120px;\n"])));
 

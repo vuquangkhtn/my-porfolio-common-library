@@ -1,6 +1,6 @@
 {
   "name": "my-porfolio-common-library",
-  "version": "1.0.4",
+  "version": "1.0.6",
   "main": "dist/index.js",
   "private": false,
   "files": [
@@ -43,7 +43,7 @@
     "lint:fix": "eslint --fix",
     "format": "prettier --write './**/*.{js,jsx,ts,tsx,css,md,json}' --config ./.prettierrc",
     "clean": "rimraf dist",
-    "compile": "npm run clean && cross-env NODE_ENV=production babel src/components --out-dir dist --copy-files --ignore __tests__,spec.js,test.js,stories.jsx,__snapshots__"
+    "compile": "npm run clean && cross-env NODE_ENV=production babel src/components --out-dir dist --copy-files typings --ignore __tests__,spec.js,test.js,stories.jsx,__snapshots__"
   },
   "eslintConfig": {
     "extends": [
