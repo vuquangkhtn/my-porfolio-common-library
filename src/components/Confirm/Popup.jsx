@@ -25,10 +25,10 @@ const Container = styled.div`
   box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.25);
 `;
 
-const Header = styled.h2`
+const Header = styled.h3`
   display: flex;
   justify-content: space-between;
-  padding: 5px 10px 5px 10px;
+  padding: 12px 10px 5px 10px;
   font-weight: bold;
 `;
 
