@@ -85,7 +85,7 @@ const Button = ({ mode, backgroundColor, children, ...props }) => {
 Button.propTypes = {
   mode: PropTypes.oneOf(['primary', 'secondary', 'submit']),
   backgroundColor: PropTypes.string,
-  children: PropTypes.object.isRequired,
+  children: PropTypes.oneOfType([PropTypes.object, PropTypes.string]).isRequired,
   onClick: PropTypes.func,
 };
 
