@@ -16,8 +16,12 @@ module.exports = {
       jsx: true
     },
     ecmaVersion: 13,
-    sourceType: 'module'
+    sourceType: 'module',
   },
   plugins: ['react'],
-  rules: {}
+  rules: {
+    semi: ["error"],
+    indent: ["error", 2],
+    quotes: ["error", "single"]
+  }
 };

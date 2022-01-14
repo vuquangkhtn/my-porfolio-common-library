@@ -9,13 +9,13 @@ exports.default = void 0;
 
 var _react = _interopRequireDefault(require("react"));
 
-var _propTypes = _interopRequireDefault(require("prop-types"));
-
 var _styledComponents = _interopRequireWildcard(require("styled-components"));
 
-var _excluded = ["mode", "backgroundColor", "children"];
+var _propTypes = _interopRequireDefault(require("prop-types"));
 
-var _templateObject, _templateObject2, _templateObject3, _templateObject4;
+var _excluded = ["expanded", "color"];
+
+var _templateObject, _templateObject2;
 
 function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
 
@@ -31,42 +31,35 @@ function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) r
 
 function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
 
-var primaryMixin = (0, _styledComponents.css)(_templateObject || (_templateObject = _taggedTemplateLiteral(["\n  background: #eee;\n  color: #5b5b5b;\n  &:hover {\n    color: #ffc200;\n  }\n"])));
-var secondaryMixin = (0, _styledComponents.css)(_templateObject2 || (_templateObject2 = _taggedTemplateLiteral(["\n  background: #474559;\n  color: #ffffff;\n  &:hover {\n    background: #ffc200;\n    color: #ffffff;\n  }\n"])));
-var submitMixin = (0, _styledComponents.css)(_templateObject3 || (_templateObject3 = _taggedTemplateLiteral(["\n  background: #ffc200;\n  color: #ffffff;\n  &:hover {\n    background: #474559;\n    color: #ffffff;\n  }\n"])));
+var expandedMixin = (0, _styledComponents.css)(_templateObject || (_templateObject = _taggedTemplateLiteral(["\n  .navbar-toggler-icon:first-child {\n    transform: rotate(45deg);\n    top: 6px;\n  }\n  .navbar-toggler-icon:nth-child(2) {\n    display: none;\n  }\n  .navbar-toggler-icon:last-child {\n    transform: rotate(-45deg);\n    bottom: 1px;\n  }\n"])));
 
-var StyledButton = _styledComponents.default.button(_templateObject4 || (_templateObject4 = _taggedTemplateLiteral(["\n  display: inline-block;\n  font-weight: 400;\n  text-align: center;\n  white-space: nowrap;\n  vertical-align: middle;\n  -webkit-user-select: none;\n  -moz-user-select: none;\n  -ms-user-select: none;\n  user-select: none;\n  border: 1px solid transparent;\n  padding: 0.375rem 0.75rem;\n  font-weight: bold;\n  border-radius: 50px;\n  padding: 13px 29px;\n  font-size: 14px;\n  line-height: normal;\n  overflow: hidden;\n  transition: all 0.4s ease;\n\n  &:hover,\n  &:focus {\n    text-decoration: none;\n  }\n\n  &.disabled,\n  &:disabled {\n    opacity: 0.65;\n  }\n\n  &:not(:disabled):not(.disabled) {\n    cursor: pointer;\n  }\n\n  &:not(:disabled):not(.disabled):active,\n  &:not(:disabled):not(.disabled).active {\n    background-image: none;\n  }\n\n  ", ";\n  ", ";\n  ", ";\n"])), function (props) {
-  return props.mode === 'primary' && primaryMixin;
+var StyledToggler = _styledComponents.default.button(_templateObject2 || (_templateObject2 = _taggedTemplateLiteral(["\n  border: 0;\n  padding: 0;\n  width: 32px;\n  height: 32px;\n  line-height: 32px;\n  outline: none;\n  cursor: pointer;\n  margin-right: 10px;\n  background: none;\n\n  &:focus {\n    outline: none;\n  }\n\n  .navbar-toggler-icon {\n    background: ", ";\n    display: block;\n    width: 100%;\n    height: 2px;\n    margin: 5px 0;\n    transition: all 0.4s ease;\n    position: relative;\n  }\n\n  ", "\n"])), function (props) {
+  return props.color || '#212121';
 }, function (props) {
-  return props.mode === 'secondary' && secondaryMixin;
-}, function (props) {
-  return props.mode === 'submit' && submitMixin;
+  return props.expanded && expandedMixin;
 });
 
-var Button = function Button(_ref) {
-  var mode = _ref.mode,
-      backgroundColor = _ref.backgroundColor,
-      children = _ref.children,
-      props = _objectWithoutProperties(_ref, _excluded);
+var NavBarToggler = function NavBarToggler(_ref) {
+  var expanded = _ref.expanded,
+      color = _ref.color,
+      restProps = _objectWithoutProperties(_ref, _excluded);
 
-  return /*#__PURE__*/_react.default.createElement(StyledButton, _extends({
-    mode: mode,
-    style: backgroundColor && {
-      backgroundColor: backgroundColor
-    }
-  }, props), children);
+  return /*#__PURE__*/_react.default.createElement(StyledToggler, _extends({
+    type: "button",
+    expanded: expanded,
+    color: color
+  }, restProps), /*#__PURE__*/_react.default.createElement("span", {
+    className: "navbar-toggler-icon"
+  }), /*#__PURE__*/_react.default.createElement("span", {
+    className: "navbar-toggler-icon"
+  }), /*#__PURE__*/_react.default.createElement("span", {
+    className: "navbar-toggler-icon"
+  }));
 };
 
-Button.propTypes = {
-  mode: _propTypes.default.oneOf(['primary', 'secondary', 'submit']),
-  backgroundColor: _propTypes.default.string,
-  children: _propTypes.default.any.isRequired,
-  onClick: _propTypes.default.func
+NavBarToggler.propTypes = {
+  expanded: _propTypes.default.bool,
+  color: _propTypes.default.string
 };
-Button.defaultProps = {
-  backgroundColor: null,
-  mode: 'primary',
-  onClick: undefined
-};
-var _default = Button;
+var _default = NavBarToggler;
 exports.default = _default;

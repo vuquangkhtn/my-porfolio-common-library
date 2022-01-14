@@ -2099,6 +2099,13 @@
   resolved "https://registry.yarnpkg.com/@humanwhocodes/object-schema/-/object-schema-1.2.1.tgz#b520529ec21d8e5945a1851dfd1c32e94e39ff45"
   integrity sha512-ZnQMnLV4e7hDlUvw8H+U8ASL02SS2Gn6+9Ac3wGGLIe7+je2AeAOxPY+izIPJDfFDb7eDjev0Us8MO1iFRN8hA==
 
+"@iconify/react@^3.1.1":
+  version "3.1.1"
+  resolved "https://registry.yarnpkg.com/@iconify/react/-/react-3.1.1.tgz#a517147b22c6e437529a539fcada4411e2f0cbe6"
+  integrity sha512-KsMXgZD94UTah5kFO41qMTQGVSt9xYnC2OCX3LiV7aRThUuTdjTFyu9EfVzHLjwhgYnkP54/DZNa+3ssBqiLBQ==
+  dependencies:
+    cross-fetch "^3.1.4"
+
 "@istanbuljs/load-nyc-config@^1.0.0":
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/@istanbuljs/load-nyc-config/-/load-nyc-config-1.1.0.tgz#fd3db1d59ecf7cf121e80650bb86712f9b55eced"
@@ -3408,13 +3415,6 @@
     synchronous-promise "^2.0.15"
     ts-dedent "^2.0.0"
     util-deprecate "^1.0.2"
-
-"@storybook/testing-react@^1.2.2":
-  version "1.2.2"
-  resolved "https://registry.yarnpkg.com/@storybook/testing-react/-/testing-react-1.2.2.tgz#1d178ad348c5f9282c784eb7dccefe236470ca46"
-  integrity sha512-4On7wsPv/ffGIyHqX0hkctSk1FDmZunkt12KGtozrM+p751AYjzAKrlL+MlPx/SgbPvwn0s4Yf0HzjUn+aGk3w==
-  dependencies:
-    "@storybook/csf" "0.0.2--canary.87bc651.0"
 
 "@storybook/theming@6.4.9":
   version "6.4.9"
@@ -6175,6 +6175,13 @@ cross-env@^7.0.3:
   integrity sha512-+/HKd6EgcQCJGh2PSjZuUitQBQynKor4wrFbRg4DtAgS1aWO+gU52xpH7M9ScGgXSYmAVS9bIJ8EzuaGw0oNAw==
   dependencies:
     cross-spawn "^7.0.1"
+
+cross-fetch@^3.1.4:
+  version "3.1.4"
+  resolved "https://registry.yarnpkg.com/cross-fetch/-/cross-fetch-3.1.4.tgz#9723f3a3a247bf8b89039f3a380a9244e8fa2f39"
+  integrity sha512-1eAtFWdIubi6T4XPy6ei9iUFoKpUkIF971QLN8lIvvvwueI65+Nw5haMNKUwfJxabqlIIDODJKGrQ66gxC0PbQ==
+  dependencies:
+    node-fetch "2.6.1"
 
 cross-spawn@7.0.3, cross-spawn@^7.0.0, cross-spawn@^7.0.1, cross-spawn@^7.0.2, cross-spawn@^7.0.3:
   version "7.0.3"
@@ -10671,6 +10678,11 @@ node-dir@^0.1.10:
   integrity sha1-X1Zl2TNRM1yqvvjxxVRRbPXx5OU=
   dependencies:
     minimatch "^3.0.2"
+
+node-fetch@2.6.1:
+  version "2.6.1"
+  resolved "https://registry.yarnpkg.com/node-fetch/-/node-fetch-2.6.1.tgz#045bd323631f76ed2e2b55573394416b639a0052"
+  integrity sha512-V4aYg89jEoVRxRb2fJdAg8FHvI7cEyYdVAh94HH0UIK8oJxUfkjlDQN9RbMx+bEjP7+ggMiFRprSti032Oipxw==
 
 node-fetch@^2.6.1:
   version "2.6.6"

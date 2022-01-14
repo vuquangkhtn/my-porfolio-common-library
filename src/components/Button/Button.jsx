@@ -48,11 +48,13 @@ const StyledButton = styled.button`
   overflow: hidden;
   transition: all 0.4s ease;
 
-  &:hover, &:focus {
+  &:hover,
+  &:focus {
     text-decoration: none;
   }
 
-  &.disabled, &:disabled {
+  &.disabled,
+  &:disabled {
     opacity: 0.65;
   }
 
@@ -60,23 +62,19 @@ const StyledButton = styled.button`
     cursor: pointer;
   }
 
-  &:not(:disabled):not(.disabled):active, &:not(:disabled):not(.disabled).active {
+  &:not(:disabled):not(.disabled):active,
+  &:not(:disabled):not(.disabled).active {
     background-image: none;
   }
 
-  ${props => props.mode === 'primary' && primaryMixin};
-  ${props => props.mode === 'secondary' && secondaryMixin};
-  ${props => props.mode === 'submit' && submitMixin};
+  ${(props) => props.mode === 'primary' && primaryMixin};
+  ${(props) => props.mode === 'secondary' && secondaryMixin};
+  ${(props) => props.mode === 'submit' && submitMixin};
 `;
-
 
 const Button = ({ mode, backgroundColor, children, ...props }) => {
   return (
-    <StyledButton
-      mode={mode}
-      style={backgroundColor && { backgroundColor }}
-      {...props}
-    >
+    <StyledButton mode={mode} style={backgroundColor && { backgroundColor }} {...props}>
       {children}
     </StyledButton>
   );
@@ -85,14 +83,14 @@ const Button = ({ mode, backgroundColor, children, ...props }) => {
 Button.propTypes = {
   mode: PropTypes.oneOf(['primary', 'secondary', 'submit']),
   backgroundColor: PropTypes.string,
-  children: PropTypes.oneOfType([PropTypes.object, PropTypes.string]).isRequired,
-  onClick: PropTypes.func,
+  children: PropTypes.any.isRequired,
+  onClick: PropTypes.func
 };
 
 Button.defaultProps = {
   backgroundColor: null,
   mode: 'primary',
-  onClick: undefined,
+  onClick: undefined
 };
 
 export default Button;
