@@ -21,7 +21,7 @@ const secondaryMixin = css`
 
 const submitMixin = css`
   background: #ffc200;
-  color: #ffffff;
+  color: #333333;
   &:hover {
     background: #474559;
     color: #ffffff;
